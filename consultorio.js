@@ -20,3 +20,17 @@ frm.addEventListener("submit", (e) => {
     frm.inPaciente.value = ""; //limpa o conteudo do campo
     frm.inPaciente.focus();
 })
+
+frm.btnurgencia.addEventListener("click", () => {
+    const nome = frm.inPaciente.value;//obtem o nome do paciente
+    pacientes.unshift(nome); //adiciona paciente no inicio do vetor 
+
+    let lista = "" //string para contatenar pacientes
+
+    //forEach aplicado no vetor pacientes
+    pacientes.forEach((paciente, i) => (lista += `${i + 1}.  ${pacientes[i]}\n`));
+
+    respLista.innerText = lista //exibe a lista de paciente
+    frm.inPaciente.value = ""; //limpa o conteudo do campo
+    frm.inPaciente.focus();
+})
