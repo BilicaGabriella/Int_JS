@@ -22,6 +22,12 @@ frm.addEventListener("submit", (e) => {
 })
 
 frm.btnurgencia.addEventListener("click", () => {
+    //veriica validações
+    if (!frm.checkValidity()){
+        alert("Informe o nome do paciente a ser atendido em carater de urgencia")
+        frm.inPaciente.focus()
+        return //retorna ao form
+    }
     const nome = frm.inPaciente.value;//obtem o nome do paciente
     pacientes.unshift(nome); //adiciona paciente no inicio do vetor 
 
